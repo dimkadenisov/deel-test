@@ -1,0 +1,16 @@
+// variables for colors spacings, fonts, etc
+.input {
+  max-width: 600px;
+  width: 100%;
+  padding: 8px;
+  background: transparent;
+  border: 1px solid #d8dae5;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-out;
+
+  &:hover {
+    border-color: #bbbcc6;
+  }
+}

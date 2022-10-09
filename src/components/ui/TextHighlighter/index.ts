@@ -1,0 +1,1 @@
+export { TextHighlighter } from './TextHighlighter';
