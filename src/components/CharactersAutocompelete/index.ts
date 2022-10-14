@@ -1,1 +1,0 @@
-export { CharactersAutocompelete } from './CharactersAutocompelete';

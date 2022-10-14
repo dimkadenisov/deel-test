@@ -1,7 +1,7 @@
 import { TextHighlighterPropsType } from './TextHighlighter.types';
 import styles from './TextHighlighter.module.scss';
 import { Fragment, memo } from 'react';
-import { getSplittedText } from './TextHighlighter.utils';
+import { getTextChunks } from './TextHighlighter.utils';
 
 export const TextHighlighter = memo(
   ({ text, substring }: TextHighlighterPropsType) => {
@@ -9,7 +9,7 @@ export const TextHighlighter = memo(
       return <>text</>;
     }
 
-    const res = getSplittedText(text, substring);
+    const res = getTextChunks(text, substring);
 
     return (
       <span>

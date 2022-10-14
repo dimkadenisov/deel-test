@@ -1,0 +1,1 @@
+export { CharactersAutocomplete } from './CharactersAutocomplete';

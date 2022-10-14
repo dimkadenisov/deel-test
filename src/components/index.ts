@@ -1,2 +1,2 @@
-export * from './CharactersAutocompelete';
+export * from './CharactersAutocomplete';
 export * from './ui';

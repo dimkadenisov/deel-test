@@ -24,7 +24,7 @@ function getSubstringBorders(text: string, substring: string) {
   }, [] as Entry[]);
 }
 
-function getChunks(text: string, entries: Entry[]) {
+function splitTextToChunks(text: string, entries: Entry[]) {
   if (entries.length === 0) {
     return [{ text, highlighted: false }] as Chunk[];
   }
@@ -59,7 +59,7 @@ function getChunks(text: string, entries: Entry[]) {
   return chunks;
 }
 
-export function getSplittedText(text: string, substring: string) {
+export function getTextChunks(text: string, substring: string) {
   const borders = getSubstringBorders(text, substring);
-  return getChunks(text, borders);
+  return splitTextToChunks(text, borders);
 }

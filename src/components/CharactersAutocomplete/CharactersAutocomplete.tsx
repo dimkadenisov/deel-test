@@ -3,7 +3,7 @@ import { useCharacters } from '../../hooks/api';
 import { useDebounce } from '../../hooks/common/useDebounce';
 import { Autocomplete } from '../ui';
 
-export function CharactersAutocompelete() {
+export function CharactersAutocomplete() {
   const [value, setValue] = useState('');
   const [searchValue, setSearchValue] = useState(value);
 
@@ -29,7 +29,7 @@ export function CharactersAutocompelete() {
     return data.results.map(({ id, name }) => ({ id, value: name }));
   }, [data?.results]);
 
-  const hanldeChange = useCallback((value: string) => {
+  const handleChange = useCallback((value: string) => {
     setValue(value);
   }, []);
 
@@ -37,7 +37,7 @@ export function CharactersAutocompelete() {
     <Autocomplete
       loading={loading}
       value={value}
-      onChange={hanldeChange}
+      onChange={handleChange}
       placeholder="Rick"
       options={options}
     />

@@ -26,7 +26,7 @@ export const Autocomplete = memo(
     }, []);
 
     const handleInputBlur = useCallback(() => {
-      // time to have ability to handle optin click before options disappear
+      // time to have ability to handle option click before options disappear
       setTimeout(() => {
         setOpened(false);
       }, 200);

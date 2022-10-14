@@ -1,11 +1,11 @@
-import { CharactersAutocompelete } from './components';
+import { CharactersAutocomplete } from './components';
 import styles from './App.module.scss';
 
 function App() {
   return (
     <div className={styles.page}>
       <div className={styles.content}>
-        <CharactersAutocompelete />
+        <CharactersAutocomplete />
       </div>
     </div>
   );
