@@ -1,30 +1,27 @@
 import { TextHighlighterPropsType } from './TextHighlighter.types';
 import styles from './TextHighlighter.module.scss';
-import { memo } from 'react';
+import { Fragment, memo } from 'react';
+import { getSplittedText } from './TextHighlighter.utils';
 
 export const TextHighlighter = memo(
   ({ text, substring }: TextHighlighterPropsType) => {
     if (!substring) {
-      return <span>{text}</span>;
+      return <>text</>;
     }
 
-    const startIndex = text
-      .toLocaleLowerCase()
-      .indexOf(substring.toLowerCase());
-
-    if (startIndex < 0) {
-      return <span>{text}</span>;
-    }
-
-    const endIndex = startIndex + substring.length;
+    const res = getSplittedText(text, substring);
 
     return (
       <span>
-        {startIndex > 0 && text.substring(0, startIndex)}
-        <span className={styles.highlight}>
-          {text.substring(startIndex, endIndex)}
-        </span>
-        {endIndex < text.length && text.substring(endIndex, text.length)}
+        {res.map(({ text, highlighted }, index) =>
+          highlighted ? (
+            <span key={index} className={styles.highlight}>
+              {text}
+            </span>
+          ) : (
+            <Fragment key={index}>{text}</Fragment>
+          )
+        )}
       </span>
     );
   }
